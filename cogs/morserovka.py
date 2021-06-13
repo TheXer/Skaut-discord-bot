@@ -1,8 +1,5 @@
 from discord.ext import commands
 
-
-# Klasická morseovka
-
 class Morse(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -28,6 +25,10 @@ class Morse(commands.Cog):
             " ": ""}
 
         self.REVERSED_MORSE_CODE_DICT = {value: key for key, value in self.MORSE_CODE_DICT.items()}
+
+    @commands.group
+    async def morse(self, ctx):
+        pass
 
     @commands.command(aliases=["encrypt"])
     async def zasifruj(self, ctx, message):
